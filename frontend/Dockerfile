@@ -1,5 +1,4 @@
-FROM nginx:1.20.1-alpine
-
+FROM nginx:1.25.2-alpine
 
 LABEL org.opencontainers.image.source=https://github.com/karrot-dev/karrot-docker-images
 
