@@ -5,9 +5,12 @@ set -eu
 if [[ -z "${IS_WORKER:-}" ]]; then
   echo "Running app server"
 
-  # try and update geo ip date, but ok if it fails
-  echo 'Updating geoip data, first time could be slow...'
-  geoipupdate || true
+  if [[ ! -z "${MAXMIND_ACCOUNT_ID:-}" ]]; then
+    echo 'Updating GeoIP data, first time could be slow...'
+    geoipupdate
+  else
+    echo 'GeoIP is not configured'
+  fi
 
   python karrot-backend.pyz migrate
   python karrot-backend.pyz server
