@@ -2,6 +2,8 @@
 
 set -eu
 
+env
+
 if [[ -z "${IS_WORKER:-}" ]]; then
   echo "Running app server"
 
