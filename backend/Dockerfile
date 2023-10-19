@@ -1,5 +1,7 @@
 FROM python:3.9-bookworm
 
+LABEL org.opencontainers.image.source=https://github.com/karrot-dev/karrot-docker-images
+
 WORKDIR /app
 
 RUN apt-get update && \
