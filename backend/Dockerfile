@@ -12,3 +12,7 @@ RUN curl https://download.karrot.world/karrot-backend-production.pyz -o /app/kar
 RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list.d/debian.sources && \
     apt-get update && \
     apt-get install -y libmaxminddb0 libmaxminddb-dev geoipupdate
+
+ADD entrypoint.sh /docker-entrypoint.sh
+
+ENTRYPOINT /docker-entrypoint.sh
