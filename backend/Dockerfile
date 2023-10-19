@@ -5,7 +5,7 @@ WORKDIR /app
 RUN apt-get update && \
     apt-get install -y gdal-bin
 
-COPY ./karrot-backend.pyz /app/karrot-backend.pyz
+RUN curl https://download.karrot.world/karrot-backend-production.pyz -o /app/karrot-backend.pyz
 
 RUN sed -i -e's/ main/ main contrib non-free/g' /etc/apt/sources.list && \
     apt-get update && \
