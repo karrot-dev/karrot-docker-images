@@ -2,8 +2,8 @@
 
 set -eu
 
-export VERSION="0.1.6"
-export VARIANT="backend-beta"
+export VERSION="13.0.0"
+export VARIANT="backend"
 export IMAGE="ghcr.io/karrot-dev/karrot-docker-images:${VERSION}-${VARIANT}"
 
 # --no-cache to ensure we download latest releast
